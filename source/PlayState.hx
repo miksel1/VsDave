@@ -123,7 +123,7 @@ class PlayState extends MusicBeatState
 	public var bfGroup:FlxGroup;
 	public var gfGroup:FlxGroup;
 
-	public static var darkLevels:Array<String> = ['bambiFarmNight', 'daveHouse_night', 'unfairness', 'bedroomNight', 'backyard'];
+	public static var darkLevels:Array<String> = ['bambiFarmNight', 'daveHouse_night', 'unfairness', 'bedroomNight', 'backyard', 'theobg'];
 	public var sunsetLevels:Array<String> = ['bambiFarmSunset', 'daveHouse_Sunset'];
 
 	public var stupidx:Float = 0;
@@ -644,6 +644,8 @@ class PlayState extends MusicBeatState
 					stageCheck = 'glitchy-void';
 				case 'exploitation':
 					stageCheck = 'desktop';
+				case 'theoretical':
+					stageCheck = 'theobg';
 				case 'kabunga':
 					stageCheck = 'exbungo-land';
 				case 'glitch' | 'memory':
@@ -1296,12 +1298,11 @@ class PlayState extends MusicBeatState
 				}
 		}
 
-		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 150, healthBarBG.y + 40, FlxG.width, "", 20);
-		scoreTxt.setFormat((SONG.song.toLowerCase() == "overdrive") ? Paths.font("ariblk.ttf") : font, 20 * fontScaler, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
+		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
-		scoreTxt.borderSize = 1.5 * fontScaler;
-		scoreTxt.antialiasing = true;
-		scoreTxt.screenCenter(X);
+		scoreTxt.borderSize = 1.25;
+		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
 		if (inFiveNights)
@@ -1755,6 +1756,18 @@ class PlayState extends MusicBeatState
 				sprites.add(bg);
 				add(bg);
 				voidShader(bg);
+				
+			case 'theobg':
+				bgZoom = 0.7;
+				stageName = 'theobg';
+
+				var bg:BGSprite = new BGSprite('theoretical', -600, -200, '', null, 1, 1, false, true);
+				bgZoom = 0.8;
+				bg.loadGraphic(Paths.image('sc/theoretical', 'shared'));
+				sprites.add(bg);
+				add(bg);
+				voidShader(bg);
+				
 			case 'interdimension-void':
 				bgZoom = 0.6;
 				stageName = 'interdimension';
@@ -3322,18 +3335,14 @@ class PlayState extends MusicBeatState
 				scoreTxt.text = "score: " + Std.string(songScore);
 			case 'exploitation':
 				scoreTxt.text = 
-				"Scor3: " + (songScore * FlxG.random.int(1,9)) + 
-				" | M1ss3s: " + (misses * FlxG.random.int(1,9)) + 
-				" | Accuracy: " + (truncateFloat(accuracy, 2) * FlxG.random.int(1,9)) + "% ";
+				"fuck yous.. no score text..";
 			default:
 				scoreTxt.text = 
-				LanguageManager.getTextString('play_score') + Std.string(songScore) + " | " + 
-				LanguageManager.getTextString('play_miss') + misses +  " | " + 
-				LanguageManager.getTextString('play_accuracy') + truncateFloat(accuracy, 2) + "%";
+				"notes per secondsses: " + (nps) + "how many bitches you have: " + (songScore) + " | skill issues: " + (misses) + " | you are... 100% sex.."
 		}
 		if (noMiss)
 		{
-			scoreTxt.text += " | NO MISS!!";
+			scoreTxt.text += " | skill issue mode";
 		}
 		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
 		{

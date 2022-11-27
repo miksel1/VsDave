@@ -291,6 +291,40 @@ class Character extends FlxSprite
 				antialiasing = false;
 				playAnim('danceRight');
 
+			case 'opissition':
+				// Oppershition??? What the deuce??
+				frames = Paths.getSparrowAtlas('sc/characters/OppositonExpunged', 'shared');
+				animation.addByPrefix('idle', 'OppoExpungedIdle', 24, false);
+				animation.addByPrefix('singUP', 'OppoExpungedUp', 24, false);
+				animation.addByPrefix('singRIGHT', 'OppoExpungedRight', 24, false);
+				animation.addByPrefix('singDOWN', 'OppoExpungedDown', 24, false);
+				animation.addByPrefix('singLEFT', 'OppoExpungedLeft', 24, false);
+	
+				globalOffset = [0, -170];
+
+				loadOffsetFile(curCharacter);
+								
+				barColor = FlxColor.fromRGB(255, 255, 255);
+	
+				playAnim('idle');
+
+			case 'theoretical':
+				// Theoretical guy dude.. 
+				frames = Paths.getSparrowAtlas('sc/characters/Theoretical_Assets', 'shared');
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'singUP', 24, false);
+				animation.addByPrefix('singRIGHT', 'singRIGHT', 24, false);
+				animation.addByPrefix('singDOWN', 'singDOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'singLEFT', 24, false);
+	
+				globalOffset = [0, -170];
+
+				loadOffsetFile(curCharacter);
+								
+				barColor = FlxColor.fromRGB(20,0,155);
+	
+				playAnim('idle');
+
 			case 'dave':
 				// DAVE SHITE ANIMATION LOADING CODE
 				frames = Paths.getSparrowAtlas('dave/characters/dave_sheet', 'shared');

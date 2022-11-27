@@ -15,7 +15,9 @@ class HealthIcon extends FlxSprite
 		'bambi-unfair',
 		'expunged',
 		'nofriend',
-		'dave-festival-3d'
+		'dave-festival-3d',
+		'theoretical',
+		'opissition'
 	];
 	var char:String;
 	var state:String;

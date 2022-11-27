@@ -56,23 +56,25 @@ class FreeplayState extends MusicBeatState
 
 	var songColors:Array<FlxColor> = 
 	[
-    	0xFF00137F,    // GF but its actually dave!
-		0xFF4965FF,    // DAVE
-		0xFF00B515,    // MISTER BAMBI RETARD (thats kinda rude ngl)
-		0xFF00FFFF,    // SPLIT THE THONNNNN
-		0xFF800080,    // FESTIVAL
-		0xFF116E1C,    // MASTA BAMBI
-		0xFFFF0000,    // KABUNGA
-		0xFF0EAE2C,    // SECRET MOD LEAK
-		0xFFFF0000,    // TRISTAN
-		FlxColor.fromRGB(162, 150, 188), // PLAYROBOT
-		FlxColor.fromRGB(44, 44, 44),    // RECURSED
-		0xFF31323F,    // MOLDY
-		0xFF35396C,    // FIVE NIGHT
-		0xFF0162F5,    // OVERDRIVE
-		0xFF119A2B,    // CHEATING
-		0xFFFF0000,    // UNFAIRNESS
-		0xFF810000,    // EXPLOITATION
+    	0xFF00137F,    // GF but its actually dave! 1
+		0xFF4965FF,    // DAVE 2
+		0xFF00B515,    // MISTER BAMBI RETARD (thats kinda rude ngl) 3
+		0xFF00FFFF,    // SPLIT THE THONNNNN 4
+		0xFF800080,    // FESTIVAL 5
+		0xFF116E1C,    // MASTA BAMBI 6
+		0xFFFF0000,    // KABUNGA 7
+		0xFF0EAE2C,    // SECRET MOD LEAK 8
+		0xFFFF0000,    // TRISTAN 9
+		FlxColor.fromRGB(162, 150, 188), // PLAYROBOT 10
+		FlxColor.fromRGB(44, 44, 44),    // RECURSED 11
+		0xFF31323F,    // MOLDY 12
+		0xFF35396C,    // FIVE NIGHT 13
+		0xFF0162F5,    // OVERDRIVE 14
+		0xFF119A2B,    // CHEATING 15
+		0xFFFF0000,    // UNFAIRNESS 16
+		0xFF810000,    // EXPLOITATION 17
+		FlxColor.fromRGB(20, 0, 155),	// theoretical guy 18
+		FlxColor.fromRGB(20, 20, 20),	// hjoims 19
     ];
 	public static var skipSelect:Array<String> = 
 	[
@@ -296,6 +298,9 @@ class FreeplayState extends MusicBeatState
 				addWeek(['Mealie'], 2, ['bambi-loser']);
 				addWeek(['Indignancy'], 2, ['bambi-angey']);
 				addWeek(['Memory'], 1, ['dave']);
+				addWeek(['Theoretical'], 18, ['theoretical']);
+				addWeek(['Obung'], 1, ['obunga']);
+				addWeek(['hjoim'], 19, ['hjoims']);
 			case 'terminal':
 				if (FlxG.save.data.cheatingFound)
 					addWeek(['Cheating'], 14, ['bambi-3d']);
