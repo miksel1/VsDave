@@ -3338,7 +3338,7 @@ class PlayState extends MusicBeatState
 				"fuck yous.. no score text..";
 			default:
 				scoreTxt.text = 
-				"how many bitches you have: " + (songScore) + " | skill issues: " + (misses) + " | you are... " + truncateFloat(accuracy, 2) + "% sex.."
+				"how many bitches you have: " + (songScore) + " | skill issues: " + (misses) + " | you are... " + truncateFloat(accuracy, 2) + "% sex..";
 		}
 		if (noMiss)
 		{
